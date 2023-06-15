@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+
+  # todo-database
+  shoppingApp-database:
+    image: postgres:latest
+    container_name: shoppingApp-database
+    ports:
+      - 5433:5432
+    environment:
+      TZ: Europe/Berlin
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: shoppingApp
+    restart: always
