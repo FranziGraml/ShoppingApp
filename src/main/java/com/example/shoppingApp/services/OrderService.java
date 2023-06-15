@@ -3,7 +3,6 @@ package com.example.shoppingApp.services;
 import com.example.shoppingApp.entity.Order;
 import com.example.shoppingApp.entity.User;
 import com.example.shoppingApp.repository.OrderRepository;
-import com.example.shoppingApp.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +13,6 @@ import java.util.List;
 public class OrderService {
 
     private final OrderRepository orderRepository;
-    private final UserRepository userRepository;
     private final UserService userService;
 
     public List<Order> getAllOrders() {

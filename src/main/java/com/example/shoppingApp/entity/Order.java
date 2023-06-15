@@ -1,9 +1,7 @@
 package com.example.shoppingApp.entity;
 
 import com.example.shoppingApp.enumeration.ShippingState;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,12 +13,13 @@ import java.util.Date;
 @AllArgsConstructor   // alle Argumente (Attribute) die im Konstruktor wären
 @Getter
 @Setter
-
+@Entity
 
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)  //legt die ID als Primärschlüssel fest
     private Long id;
+    @OneToOne
     private User user;
     private Number total;
     private Date date;

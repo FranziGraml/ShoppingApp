@@ -2,8 +2,8 @@ package com.example.shoppingApp.controller;
 
 import com.example.shoppingApp.entity.Order;
 import com.example.shoppingApp.services.OrderService;
-import dto.OrderCreateDTO;
-import dto.OrdertUpdateDTO;
+import com.example.shoppingApp.dto.OrderCreateDTO;
+import com.example.shoppingApp.dto.OrdertUpdateDTO;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -53,7 +53,7 @@ public class OrderController {
     }
 
 
-    @GetMapping("/{id}")
+    @GetMapping("/user/{id}")
     //@PreAuthorize("hasRole('ORDER_READ_ALL BY USER ID')")
     public List<Order> getOrdersByUserId(@PathVariable("id") Long id) {
         return this.orderService.getOrdersByUserId(id);
