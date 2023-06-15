@@ -6,7 +6,6 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.Date;
 
@@ -16,7 +15,7 @@ import java.util.Date;
 
 
 
-public class OrdertUpdateDTO {
+public class OrderUpdateDTO {
     @NotBlank
     private Long id;
     @NotBlank

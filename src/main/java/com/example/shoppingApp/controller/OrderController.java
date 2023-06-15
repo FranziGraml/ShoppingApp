@@ -3,7 +3,7 @@ package com.example.shoppingApp.controller;
 import com.example.shoppingApp.entity.Order;
 import com.example.shoppingApp.services.OrderService;
 import com.example.shoppingApp.dto.OrderCreateDTO;
-import com.example.shoppingApp.dto.OrdertUpdateDTO;
+import com.example.shoppingApp.dto.OrderUpdateDTO;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -40,7 +40,7 @@ public class OrderController {
 
     @PutMapping
     //@PreAuthorize("hasRole('ORDER_UPDATE')")
-    public Order updateOrder(@Valid @RequestBody OrdertUpdateDTO orderUpdateDTO) {
+    public Order updateOrder(@Valid @RequestBody OrderUpdateDTO orderUpdateDTO) {
         Order order = this.orderService.getOrderById(orderUpdateDTO.getId());
         modelMapper.map(orderUpdateDTO, order);
         return this.orderService.updateOrder(order);

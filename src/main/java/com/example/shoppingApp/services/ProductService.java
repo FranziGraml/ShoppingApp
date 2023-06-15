@@ -41,7 +41,7 @@ public class ProductService {
     }
 
     //Read
-    public List<Product> getAllProduct() {
+    public List<Product> getAllProducts() {
         return (List<Product>) productRepository.findAll();
     }
 
@@ -49,12 +49,14 @@ public class ProductService {
         return productRepository.findById(id).orElseThrow();
     }
 
-    public List<Product> getProductsByCategory(Category category) {
+    /*public List<Product> getProductsByCategory(Category category) {
         return productRepository.findAllByCategory(category);
     }
     public List<Product> getProductsByAvailability(Availability availability) {
         return productRepository.findAllByAvailable(availability);
     }
+
+     */
 }
 
 
