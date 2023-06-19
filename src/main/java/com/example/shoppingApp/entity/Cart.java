@@ -6,6 +6,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @NoArgsConstructor    //leerer Konstruktor (deault Konstruktor)
 @AllArgsConstructor   // alle Argumente (Attribute) die im Konstruktor wären
 @Getter
@@ -18,6 +21,9 @@ public class Cart {
     private Long id;
     @OneToOne
     private User user;
+    @ElementCollection
+    //@OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    private Map<Product,Integer> items = new HashMap<>();
 
 
 }

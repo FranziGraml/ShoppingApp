@@ -9,12 +9,13 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/shopping")
+@RequestMapping("/order")
 @RequiredArgsConstructor
 public class OrderController {
 
@@ -26,11 +27,7 @@ public class OrderController {
     public List<Order> getAllOrders() {
         return this.orderService.getAllOrders();
     }
-    @GetMapping("/{id}")
-    //@PreAuthorize("hasRole('ORDER_READ_ALL BY ORDER ID')")
-    public Order getOrderById(@PathVariable("id") Long id) {
-        return this.orderService.getOrderById(id);
-    }
+
 
     @PostMapping
     //@PreAuthorize("hasRole('ORDER_CREATE')")
@@ -58,4 +55,11 @@ public class OrderController {
     public List<Order> getOrdersByUserId(@PathVariable("id") Long id) {
         return this.orderService.getOrdersByUserId(id);
     }
+
+    @GetMapping("/{id}")
+    //@PreAuthorize("hasRole('ORDER_READ_ALL BY ORDER ID')")
+    public Order getOrderById(@PathVariable("id") Long id) {
+    return this.orderService.getOrderById(id);
+    }
 }
+

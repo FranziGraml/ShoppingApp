@@ -26,7 +26,8 @@ public class ProductService {
     public Product updateProduct(Product product) {
         Product updateProduct = productRepository.findById(product.getId()).orElseThrow(
                 () -> new EntityNotFoundException("Not found"));
-        updateProduct.setTitle(product.getTitle());
+        updateProduct.setName(product.getName());
+        updateProduct.setDescription(product.getDescription());
         updateProduct.setPrice(product.getPrice());
         updateProduct.setAvailable(product.getAvailable());
         updateProduct.setCategory(product.getCategory());

@@ -19,10 +19,14 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)  //legt die ID als Primärschlüssel fest
     private Long id;
-    @OneToOne
-    private User user;
-    private Number total;
-    private Date date;
+
+    private String user;
+
+    //private Map<Product, Integer> items;
+    private Boolean paid;
     private ShippingState shippingState;
+
+    private Date date;
+
 
 }

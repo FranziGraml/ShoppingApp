@@ -21,7 +21,8 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)  //legt die ID als Primärschlüssel fest
     private Long id;
-    private String title;
+    private String name;
+    private  String description;
     private Float price;
     private Category category;
     private Availability available;

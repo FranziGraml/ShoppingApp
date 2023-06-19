@@ -19,7 +19,8 @@ public class User {
     @Id //legt die ID als Primärschlüssel fest
     @GeneratedValue(strategy = GenerationType.IDENTITY)   // legt einen Wert fest und wird gespeichert (was soll die neue ID werden)
     private Long id;
-    private String name;
+    private  String firstname;
+    private  String surname;
     private String email;
     private String password;
 

@@ -22,9 +22,7 @@ public class SecurityConfig {
         http.cors();
         //http.csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
         http
-
                 .authorizeHttpRequests((authorize) -> authorize
-
                         .anyRequest().authenticated()
                 )
                 .httpBasic(withDefaults());
@@ -43,21 +41,3 @@ public class SecurityConfig {
     }
 }
 
-/*
- @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.csrf().disable();
-        http.cors();
-        //http.csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
-        http
-
-                .authorizeHttpRequests((authorize) -> authorize
-                        .requestMatchers(HttpMethod.DELETE, "/todo/**").hasAuthority("ROLE_TODO_DELETE")
-                        .requestMatchers(HttpMethod.POST,"/todo/**").hasAuthority("ROLE_TODO_CREATE")
-                        .requestMatchers(HttpMethod.PUT,"/todo/**").hasAuthority("ROLE_TODO_UPDATE")
-                        .anyRequest().authenticated()
-                )
-                .httpBasic(withDefaults());
-        return http.build();
-    }
- */

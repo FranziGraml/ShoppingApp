@@ -8,6 +8,7 @@ import com.example.shoppingApp.services.ProductService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -28,7 +29,7 @@ public class ProductController {
     @PostMapping
     //@PreAuthorize("hasRole('PRODUCT_CREATE')")
     public ResponseEntity<Product> createProduct(@Valid @RequestBody ProductCreateDTO productCreateDTO){
-        return new ResponseEntity<>(this.productService.createProduct(modelMapper.map(productCreateDTO, Product.class)), CREATED );
+        return new ResponseEntity<>(this.productService.createProduct(modelMapper.map(productCreateDTO, Product.class)), HttpStatus.CREATED);
     }
     @PutMapping
     //@PreAuthorize("hasRole('PRODUCT_UPDATE')")
