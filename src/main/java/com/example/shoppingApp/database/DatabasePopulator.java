@@ -35,15 +35,15 @@ public class DatabasePopulator implements CommandLineRunner {
         Addresse addresse1 = new Addresse(null,"Germany","84100","Landshut","Adler","10");
         addressRepository.save(addresse1);
 
-        final User user1 = new User(null,"Franzi","Graml","f.hhh@dfd.de","1111");
-        final User user2 = new User(null,"Maxi","Graml","f.hhh@hallo.de","1551");
+        final User user1 = new User(null,"Franzi","Graml","f.muster.de","1111");
+        final User user2 = new User(null,"Maxi","Graml","m.muster.de","1551");
 
         userRepository.save(user1);
         userRepository.save(user2);
         userRepository.findAll();
 
-        final Product product1 = new Product(null,"Hemd","für Frauen",35F,Category.CLOTHING,Availability.LIMITED_STOCK);
-        final Product product2 = new Product(null,"Hose","für Frauen",35F,Category.CLOTHING,Availability.LIMITED_STOCK);
+        final Product product1 = new Product(null,"IPhone","Space schwarz",350F,Category.ELECTRONICS,Availability.LIMITED_STOCK);
+        final Product product2 = new Product(null,"MaxZone","Digitaler Gutschein",50F,Category.CLOTHING,Availability.LIMITED_STOCK);
         final Product product3 = new Product(null,"Das fliegende Klassenzimmer","Kinderbuch",35F,Category.BOOKS,Availability.LIMITED_STOCK);
         productRepository.save(product1);
         productRepository.save(product2);

@@ -2,7 +2,6 @@ package com.example.shoppingApp.controller;
 
 import com.example.shoppingApp.dto.CartUpdateDTO;
 import com.example.shoppingApp.entity.Cart;
-import com.example.shoppingApp.entity.Product;
 import com.example.shoppingApp.entity.User;
 import com.example.shoppingApp.services.CartService;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +22,7 @@ public class CartController {
         return this.cartService.getCart(user);
     }
 
-    @PutMapping("/update")
+    @PutMapping()
     @PreAuthorize("hasRole('UPDATE Cart')")
     public Cart updateCart(@AuthenticationPrincipal User user, @RequestBody CartUpdateDTO cartUpdateDTO)  {
         return this.cartService.updateCart(user, cartUpdateDTO.getProduct(), cartUpdateDTO.getQuantity());
