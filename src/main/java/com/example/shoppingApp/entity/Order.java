@@ -2,10 +2,7 @@ package com.example.shoppingApp.entity;
 
 import com.example.shoppingApp.enumeration.ShippingState;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 
 import java.util.ArrayList;
@@ -14,6 +11,7 @@ import java.util.List;
 
 @NoArgsConstructor    //leerer Konstruktor (deault Konstruktor)
 @AllArgsConstructor   // alle Argumente (Attribute) die im Konstruktor wären
+@ToString
 @Getter
 @Setter
 @Entity

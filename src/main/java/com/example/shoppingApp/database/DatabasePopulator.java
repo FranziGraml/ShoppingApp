@@ -29,7 +29,9 @@ public class DatabasePopulator implements CommandLineRunner {
     @Autowired
     private final UserRepository userRepository;
 
-
+    /**
+     *Befüllung der Datenbank mit Demo Werten
+     */
     @Override
     public void run (String...args) throws Exception{
         Addresse addresse1 = new Addresse(null,"Germany","84100","Landshut","Adler","10");

@@ -15,6 +15,9 @@ import java.util.ArrayList;
 public class CartService {
     private final CartRepository cartRepository;
 
+    /**
+     *
+     */
     public Cart getCart(User user) {
         return cartRepository.findCartByUser(user).orElse(null);
     }
